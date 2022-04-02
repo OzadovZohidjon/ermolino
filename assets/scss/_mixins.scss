@@ -3,3 +3,30 @@
     align-items: $align;
     justify-content: $justify;
 }
+
+$maxWidth: 1920;
+$maxWidthContainer: 1250;
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+
+	@if $type == 1 {
+		#{$property}: $startSize + px;
+		@media (max-width:#{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((100vw - 320px) / #{$maxWidthContainer - 320})
+			);
+		}
+	} @else if $type == 2 {
+		#{$property}: $startSize + px;
+		@media (min-width:#{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+			);
+		}
+	} @else {
+		#{$property}: calc(
+			#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+		);
+	}
+}

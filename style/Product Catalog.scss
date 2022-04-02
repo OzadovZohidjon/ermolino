@@ -1,0 +1,457 @@
+@import '../assets/scss/fonts', '../assets/scss/mixins', '../assets/scss/variables';
+
+.Product{
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    &__row{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    &__left{
+        width: 270px;
+        height: 1800px;
+        border: 1px solid #CCCCCC;
+        margin-right: 30px;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    &__right{
+        width: 870px;
+        height: auto;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px    
+    }
+    &__list{
+        margin: 0px 70px 0px 60px;
+    }
+    &__text{
+        margin: 25px 70px 55px 60px;
+    }
+    &__btn{
+        border: 1px solid #E2000F;
+        padding: 7px 24px;
+        border-radius: 5px;
+        margin: 0px 0 40px 60px;
+        background-color: transparent;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: #E2000F;
+    }
+
+    &__sets{
+        position: relative;
+
+        &-list{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 35px 70px 55px 60px;
+        }
+        &-item{
+            width: 350px;
+            height: auto;
+
+        }
+        &-img{
+            width: 100%;
+        }
+        &-text{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #2B2B2B;
+            margin: 18px 0 7px 0;
+        }
+        &-span{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #A1A1A1;
+        }
+        &-text2{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            & p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 23px;
+                color: #7E171F;
+            }
+            & a{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 21px;
+                text-align: right;
+                color: #2B2B2B;
+            }
+        }
+        &-list-btn{
+            width: 350px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background: #EC1C23;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .search__panel-itemBtn-icon{
+            margin-left: 15px;
+        }
+    }
+}
+.Product__text2{
+    margin: 0 0 30px 60px;
+}
+.Product__img{
+    margin: 40px 0;
+}
+.Product__img2{
+    margin: 80px 0 45px 0;
+}
+.Product__text-footer{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 145%;
+    color: #2B2B2B;
+    margin-bottom: 45px;
+}
+
+.accardion{
+
+    &__item{
+        margin-bottom: 20px;
+    }
+
+    &__head{
+        width: 100%;
+        padding: 5px 10px;
+        background: rgba(226, 0, 15, 0.05);
+        border-radius: 60px;
+        @include d-flex(center, space-between);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &-title{
+            font-family: $m-font;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 125%;
+            color: #2B2B2B;
+        }
+
+        &-icon{
+            width: 10px;
+            height: 10px;
+            border-right: 1px solid #ED242C;
+            border-bottom: 1px solid #ED242C;
+            display: inline-block;
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        &.active &-icon{
+                transform: rotate(-135deg);
+        }
+    }
+
+    &__body{
+        padding-left: 10px;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+
+
+    .checkbox__group{
+        display: flex;
+        flex-direction: column;
+        font-family: $r-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 200%;
+        color: #2B2B2B;
+        .control {
+            font-family: arial;
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 5px;
+            padding-top: 0px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+            .control input {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+            }
+        .control_indicator {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #ffffff;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+        .control:hover input ~ .control_indicator,
+        .control input:focus ~ .control_indicator {
+            background: #ffffff;
+        }
+        
+        .control input:checked ~ .control_indicator {
+            background: #ffffff;
+        }
+        .control:hover input:not([disabled]):checked ~ .control_indicator,
+        .control input:checked:focus ~ .control_indicator {
+            background: #ffffff;
+        }
+        .control input:disabled ~ .control_indicator {
+            background: #e6e6e6;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .control_indicator:after {
+            box-sizing: unset;
+            content: '';
+            position: absolute;
+            display: none;
+        }
+        .control input:checked ~ .control_indicator:after {
+            display: block;
+        }
+        .control-checkbox .control_indicator:after {
+            left: 7px;
+            top: 3px;
+            width: 3px;
+            height: 8px;
+            border: solid #E2000F;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+        .control-checkbox input:disabled ~ .control_indicator:after {
+            border-color: #7b7b7b;
+        }
+        .control-checkbox .control_indicator::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4.5rem;
+            height: 4.5rem;
+            margin-left: -1.3rem;
+            margin-top: -1.3rem;
+            background: #2aa1c0;
+            border-radius: 3rem;
+            opacity: 0.6;
+            z-index: 99999;
+            transform: scale(0);
+        }
+        @keyframes s-ripple {
+            0% {
+                transform: scale(0);
+            }
+            20% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+        @keyframes s-ripple-dup {
+           0% {
+               transform: scale(0);
+            }
+           30% {
+                transform: scale(1);
+            }
+            60% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+        .control-checkbox input + .control_indicator::before {
+            animation: s-ripple 250ms ease-out;
+        }
+        .control-checkbox input:checked + .control_indicator::before {
+            animation-name: s-ripple-dup;
+        }
+    }
+
+    .range__group{
+        .range__input-group{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 15px;
+
+
+            label{
+                border: 1px solid #CCCCCC;
+                width: 46%;
+                padding: 5px 10px;
+                border-radius: 8px;
+                font-family: $r-font;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 12px;
+                color: #2B2B2B;
+
+                b{
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        input[type=range] {
+            width: 100%;
+            margin: 8px 0;
+            background-color: transparent;
+            -webkit-appearance: none;
+          }
+          input[type=range]:focus {
+            outline: none;
+          }
+          input[type=range]::-webkit-slider-runnable-track {
+            background: #cccccc;
+            border: 0.2px solid #cccccc;
+            border-radius: 1.3px;
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+          }
+          input[type=range]::-webkit-slider-thumb {
+            margin-top: -8.2px;
+            width: 20px;
+            height: 20px;
+            background: #e2000f;
+            border: 0;
+            border-radius: 50px;
+            cursor: pointer;
+            -webkit-appearance: none;
+          }
+          input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #d9d9d9;
+          }
+          input[type=range]::-moz-range-track {
+            background: #cccccc;
+            border: 0.2px solid #cccccc;
+            border-radius: 1.3px;
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+          }
+          input[type=range]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #e2000f;
+            border: 0;
+            border-radius: 50px;
+            cursor: pointer;
+          }
+          input[type=range]::-ms-track {
+            background: transparent;
+            border-color: transparent;
+            border-width: 9px 0;
+            color: transparent;
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+          }
+          input[type=range]::-ms-fill-lower {
+            background: #bfbfbf;
+            border: 0.2px solid #cccccc;
+            border-radius: 2.6px;
+          }
+          input[type=range]::-ms-fill-upper {
+            background: #cccccc;
+            border: 0.2px solid #cccccc;
+            border-radius: 2.6px;
+          }
+          input[type=range]::-ms-thumb {
+            width: 20px;
+            height: 20px;
+            background: #e2000f;
+            border: 0;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 0px;
+            /*Needed to keep the Edge thumb centred*/
+          }
+          input[type=range]:focus::-ms-fill-lower {
+            background: #cccccc;
+          }
+          input[type=range]:focus::-ms-fill-upper {
+            background: #d9d9d9;
+          }
+          /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+          how to remove the virtical space around the range input in IE*/
+          @supports (-ms-ime-align:auto) {
+            /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+            input[type=range] {
+              margin: 0;
+              /*Edge starts the margin from the thumb, not the track as other browsers do*/
+            }
+          }
+    }
+
+    .btns__group{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-btn{
+            background-color: transparent;
+            width: 30%;
+            border: 1px solid #E2000F;
+            font-family: $m-font;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #E2000F;
+            padding: 7px 0;
+            border-radius: 8px;
+            padding-bottom: 10px;
+            transition: all 0.3s ease;
+
+            &.active{
+                color: #fff;
+                background-color: #E2000F;
+            }
+        }
+    }
+}
